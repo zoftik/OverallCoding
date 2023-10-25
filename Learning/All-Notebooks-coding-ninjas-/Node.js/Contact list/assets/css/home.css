@@ -1,0 +1,7 @@
+body{
+    text-align: right;
+    height: 10vp;
+    flex-wrap: wrap;
+    font-size: larger;
+    font-style: italic;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function square (a) {
+            return a*a
+        }
+
+        function addSquare (a, b, cb) {
+            return cb(a) + cb(b);
+        }
+
+        // let result = addSquare(4, 5, square)
+        // console.log(result)
+
+        function outer () {
+
+            let a = 10;
+            let b = 20;
+
+            function inner () {
+                let c = 30;
+                let d = 40;
+                console.log(a, b, c, d)
+            }
+            // inner()
+            return inner
+        }
+
+        let nested = outer()
+        // nested()
+        // nested()
+        // nested()
+
+        outer()()
+
+
+    </script>
+    
+</body>
+</html>

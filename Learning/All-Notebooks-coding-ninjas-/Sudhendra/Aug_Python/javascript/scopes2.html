@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let a = 89
+        let b = 34
+
+
+        function func1 () {
+            // let b = true
+            let a = 45
+            console.log(a, b)   // 89 true ; 89, 34
+
+            {
+                let a = 100
+                let c = 'car'
+                console.log(c, a) // car 89 ; car 45; car 100
+            }
+            console.log(a) // 45
+        }
+
+
+        // behaviour var .....
+
+        var v = 36
+
+        function func2 () {
+            var u = 34
+            console.log(v, u) // 36 34
+
+            {
+                var u = 10
+                let z = 89
+
+                console.log(u, z)  // 10, 89
+            }
+            console.log("u, v", u, v)  // 10 36
+        }
+
+        func2()
+
+    </script>
+    
+</body>
+</html>

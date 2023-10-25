@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starting With React App</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>`
+
+<body>
+    <div id="root">
+        <!-- <h1>Hello World</h1>
+        <h2>This is HTML</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum voluptate odio eaque mollitia laudantium? Minus
+            harum deserunt, omnis nisi hic nihil? Molestias tenetur omnis, consequatur architecto at hic sint id.</p> -->
+        <script type="text/babel">
+            // const jsxHeading = <>
+            //     {/* <React.Fragment> */}
+            //     <h1>About React</h1>
+            //     <p>
+            //         <li>
+            //             lorem
+            //         </li>
+            //         <li>
+            //             lorem
+            //         </li>
+            //         <li>
+            //             lorem
+            //         </li>
+            //     </p>
+            //     {/* </React.Fragment> */}
+            // </>
+
+            function App() {
+
+                return (
+                    <>
+                    <h1>About React</h1>
+                        <p>
+                            <ol type="1">
+                                <li>lorem</li>
+                                <li>lorem</li>
+                                <li>lorem</li>
+                            </ol>
+                        </p>
+                    </>    
+                )
+            }
+        ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+
+        </script>
+
+    </div>
+</body>
+
+</html>

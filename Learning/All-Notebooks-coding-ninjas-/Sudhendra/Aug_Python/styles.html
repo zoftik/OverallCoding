@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
+
+    <style>
+        div {
+            background-color: burlywood;
+            color: steelblue;
+            height: 200px;
+            width: 100px;
+            border: 1px solid black;
+            padding: 8px;
+            margin: 24px;
+            outline: 4px solid cadetblue;
+        }
+
+        #para {
+            color: darkcyan;
+            font-weight: bolder;
+        }
+
+        .grp1 {
+            background-color: floralwhite;
+            color: gold
+        }
+
+        div p {
+            color: brown
+        }
+
+        div > span {
+            color: greenyellow
+        }
+
+        .grp1 p {
+            color: darkgray;
+        }
+
+        a:hover {
+            color: cadetblue;
+        } 
+
+        a:visited {
+            color: red;
+        }
+
+        a:active {
+            color: burlywood;
+        }
+
+        input:focus {
+            color: red
+        }
+
+
+        p::first-letter {
+            font-weight: 900;
+        }
+
+        p::first-line {
+            color: rgb(113, 87, 87);
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        li::before {
+            content: "😀";
+        }
+
+        li:nth-child(2n+1) {
+            color: blueviolet;
+        }
+
+        [href="index.html"] {
+            text-decoration: none;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <h1 class="grp1" > Styling using CSS. </h1>
+
+    <div class="grp1" >
+        Some text here.
+
+        <p>
+            Inside the div! <br/>
+            Second line
+            <span> span inside para! </span>
+        </p>
+        <span> span outside para! </span>
+
+
+    </div>
+
+    <p > Text in paragraph. </p>
+    <p class="grp1" > Text in paragraph 2. </p>
+    <p> Text in paragraph 2. </p>
+
+    <a href="index.html" > Go to Index </a>
+    <a href="second.html" > Go to Index </a>
+            
+            
+
+
+
+    <input />
+
+    <ul>
+        <li>
+            1
+        </li>
+        <li>
+            2
+        </li>
+        <li>
+            3
+        </li>
+        <li>
+            4
+        </li>
+    </ul>
+
+</body>
+
+</html>

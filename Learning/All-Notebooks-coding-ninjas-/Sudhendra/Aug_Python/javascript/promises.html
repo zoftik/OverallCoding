@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let promise = new Promise((resolve, reject) => {
+
+            setTimeout(() => {
+                // console.log("timeout over!");
+                resolve('Settimeout Over!')
+                // reject(new Error('error from promise!')) 
+            }, 3000)
+
+        })
+
+        // promise
+        // .catch((error) => console.log(error))
+        // .then( (result) => console.log(result))
+        // .then(() => console.log('after timeout'))
+        // .then(() => console.log("last logs"))
+
+
+        // console.log("1")
+        // setTimeout(() => console.log("2"))
+        // console.log("3")
+
+        // 1 3 2
+
+
+        function delayedAddition (a, b, time) {
+
+            let promise = new Promise((res, rej) => {
+                setTimeout(() => {
+                    rej(a+b)
+                }, time)
+            })
+
+            return promise
+
+        }
+
+        // delayedAddition(3, 5, 5000)
+        // .then((value) =>  console.log("then", value))
+        // .then(() =>  console.log("delyed addtion called!"))
+        // .catch((error) => console.log(error))
+        // .finally(() => console.log("runs always"))
+
+
+        // promise all .....
+
+        // const [response1, response2] = await Promise.all([
+        //     fetch('https://jsonplaceholder.typicode.com/todos'),
+        //     fetch('https://jsonplaceholder.typicode.com/users')
+        // ])
+
+        // const response = await Promise.race([
+        //     fetch('https://jsonplaceholder.typicode.com/todos'),
+        //     fetch('https://jsonplaceholder.typicode.com/users')
+        // ])
+
+
+    </script>
+    
+</body>
+</html>

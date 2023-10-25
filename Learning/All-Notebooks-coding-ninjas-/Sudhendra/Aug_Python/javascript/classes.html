@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let School = class  {
+            constructor (schoolName) {
+                this.schoolName = schoolName
+            }
+
+            getSchoolName() {
+                console.log(this.schoolName)
+            }
+        }
+
+        class Student extends School {
+
+            constructor (name, roll, schoolName){
+                super(schoolName)
+                this.name = name
+                this.roll = roll
+                this.getRoll = function () {console.log(this.roll)}
+            }
+
+            getName() {
+                console.log(this.name)
+            }
+
+        }
+
+        let student1 = new Student ('abc', 12, 'DPS')
+        let student2 = new Student ('abc', 12, 'DPS')
+        let student3 = new Student ('abc', 12, 'DPS')
+
+        
+
+        // let school1 = new School('DPS')
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2> Clock </h2>
+
+    <div id="time-box">
+
+    </div>
+
+    <h2> Alarm Clock </h2>
+
+    <input type="number" id="hours" />
+    <input type="number" id="minutes" />
+    <input type="number" id="seconds" />
+    <button onclick="alarmClockHandler()" > Set Alarm </button>
+
+    <h2> StopWatch </h2>
+
+    <div id="stopwatch-box" >
+
+    </div>
+    <div>
+        <button onclick="startWatch()" > Start </button>
+        <button onclick="stopWatchHandler()" > Stop </button>
+        <button onclick="resetHandler()" > Reset </button>
+        
+    </div>
+
+
+    <script>
+
+        let setIntervalID = setInterval(clockHandler, 1000)
+        function clockHandler() {
+            const timeBox = document.getElementById('time-box')
+            const date = new Date()
+            timeBox.innerText = `${date.getHours()} :  ${date.getMinutes()} : ${date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds()}`
+        }
+
+        function alarmClockHandler () {
+
+            const hoursValue = parseInt(document.getElementById('hours').value)
+            const minutesValue = parseInt(document.getElementById('minutes').value)
+            const secondsValue = parseInt(document.getElementById('seconds').value)
+
+            const currentDate = new Date()
+            const difference = (( hoursValue - currentDate.getHours() ) * 60 * 60 + 
+            (minutesValue - currentDate.getMinutes()) * 60 + 
+            (secondsValue - currentDate.getSeconds())) * 1000
+
+            let setTimeoutID = setTimeout(() => console.log("times up"), difference)
+        }
+
+        let setIntervalID2
+        function startWatch () {
+            const startDate = Date.now()
+
+            setIntervalID2 = setInterval(() => {
+                const currentDate = Date.now()
+                const milliSecondsDifference = currentDate - startDate
+                const secondsDiff = Math.floor(milliSecondsDifference / 1000)
+                const minutesDiff = Math.floor(secondsDiff / 60)
+                const hoursDiff = Math.floor(minutesDiff / 60)
+
+                const stopWatchBox = document.getElementById('stopwatch-box')
+                stopWatchBox.innerText = `${hoursDiff} : ${minutesDiff % 60} : ${secondsDiff % 60}`
+
+            }, 1000)
+        }
+
+        function stopWatchHandler () {
+            clearInterval(setIntervalID2)
+        }
+
+        function resetHandler () {
+            stopWatchHandler()
+            const stopWatchBox = document.getElementById('stopwatch-box')
+            stopWatchBox.innerText = "00 : 00 : 00"
+        }
+
+    </script>
+
+</body>
+
+</html>

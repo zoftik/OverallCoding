@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function outer () {
+            let a = 10
+            let b = 20
+            
+            function inner () {
+                let c = 30
+                a++
+                b++
+                c++
+                console.log(a, b, c)
+            }
+
+            return inner
+
+        }
+
+        const nested = outer()
+        nested()  // 11 21 31
+        nested()  // 12 22 31
+
+        const nested1 = outer()
+        nested1()  // 11 21 31
+        nested1()  // 12 22 31
+
+
+
+    </script>
+    
+</body>
+</html>

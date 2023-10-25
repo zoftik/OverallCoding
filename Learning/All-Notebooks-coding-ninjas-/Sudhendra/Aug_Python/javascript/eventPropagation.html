@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #outer {
+            height: 300px;
+            width: 300px;
+            background-color: blanchedalmond;
+        }
+        #middle {
+            height: 200px;
+            width: 200px;
+            background-color: grey;
+        }
+        #inner {
+            height: 100px;
+            width: 100px;
+            background-color: salmon;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <!-- <div id="outer" onclick="console.log('outer', event, event.target, event.currentTarget)" >
+        <div id="middle" onclick="console.log('middle', event, event.target, event.currentTarget)" >
+            <div id="inner" onclick="console.log('inner', event, event.target, event.currentTarget)" >
+
+            </div>
+        </div>
+    </div> -->
+
+    <div id="outer"  >
+        <div id="middle"  >
+            <div id="inner"  >
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const outerEl = document.getElementById('outer')
+        const middleEl = document.getElementById('middle')
+        const innerEl = document.getElementById('inner')
+
+        outerEl.addEventListener('click', (event) => {console.log("outer", event, event.target)}, {capture: true})
+        middleEl.addEventListener('click', (event) => {console.log("middle", event, event.target)}, {capture: true})
+        innerEl.addEventListener('click', (event) => {console.log("inner", event, event.target)}, {capture: true})
+
+
+
+    </script>
+
+</body>
+</html>

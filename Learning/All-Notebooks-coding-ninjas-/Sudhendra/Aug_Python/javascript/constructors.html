@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // constructors in JS
+
+        function Student (name, roll) {
+            let obj = {
+                roll: roll,
+                name: name,
+                getName () {  console.log(this.name)  }
+            }
+            return obj;
+        }
+
+        // Student.prototype.getRoll = function () { console.log(this.roll)  } discuss this next session
+
+        let student1 = Student('a', 23)
+        let student2 = Student('b', 24)
+        let student3 = Student('b', 25)
+
+
+        // 2nd way
+
+        function Student1 (name, roll) {
+            this.name = name
+            this.roll = roll
+            this.getName = function () {console.log("the name", this.name)}
+        }
+
+        Student1.prototype.getRoll = function () { console.log(this.roll)  }
+        Student1.prototype.schoolName = 'DPS'
+
+        let student11 = new Student1('a', 45)
+        let student12 = new Student1('a', 46)
+        let student13 = new Student1('a', 47)
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

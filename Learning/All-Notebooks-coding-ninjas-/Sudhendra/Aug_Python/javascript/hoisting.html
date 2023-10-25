@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        console.log(a)  // undefined
+        // console.log(b)  // uninitialzed error
+        // console.log(c)  // uninitialzed error
+
+        add(4, 5) // undefined, 
+
+        var a = 34;
+        let b = 50;
+        const c = 'car'
+
+        // console.log(a1) // not defined
+
+        function add (a, b) {
+
+            console.log(a1)  // undefined
+            // console.log(b1)  // uninitialzed error
+            // console.log(c1)  // uninitialzed error
+
+
+            var a1 = 34;
+            let b1 = true
+            const c1 = 'car'
+
+            console.log(a+b)
+        }
+
+        function add2 () {
+
+            // var a = 35;
+            // let b = 48;
+
+            console.log(a+b) // 83 // 84
+
+        }
+
+        add2()
+
+        // v1(2, 5) // 7, undefined(2, 5)
+        var v1 = function funcexp1 (a, b) { console.log(a+b) }
+        var v2 = function (a, b) { console.log("anonymous", a+b) }
+
+        {
+            let a = "in block scope!"
+            var d = "a var variable" 
+            const c = 34
+            console.log(a)
+        }
+
+        console.log(d, a)
+
+
+    </script>
+
+</body>
+</html>

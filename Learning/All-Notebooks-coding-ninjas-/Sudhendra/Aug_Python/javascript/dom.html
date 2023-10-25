@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            height: 150px;
+            width: 150px;
+            background-color: blanchedalmond;
+        }
+    </style>
+
+</head>
+<body>
+
+    <button id="toggle-btn"> Dark Theme </button>
+
+    <h1> Heading1 </h1>
+
+    <div id="div1" onmouseover="toggleColor(event)"  onmouseout="toggleColor(event)"  >
+        Some text here!
+    </div>
+
+    <span class="grp1" >
+        Text 1
+    </span>
+
+    <span class="grp1" >
+        Text 2
+    </span>
+    
+    <button id="button1" onclick="clickHandler(event)"  >
+        Click!
+    </button>
+
+    <input type="text" id="input1" placeholder="Enter the name" />
+    
+
+    <script>
+
+        let buttonel = document.getElementById('button1')
+        // buttonel.addEventListener('click', clickHandler)
+
+        function clickHandler (event) {
+            console.log("Button Clicked!", event)
+        }
+
+        function toggleColor (event) {
+
+            const currentColor = event.target.style.backgroundColor
+
+            if(currentColor === 'grey') {
+                event.target.style.backgroundColor = 'blanchedalmond'
+            } else {
+                event.target.style.backgroundColor = 'grey'
+            }
+
+        }
+
+        const toggleButton = document.getElementById('toggle-btn')
+        toggleButton.addEventListener('click', toggleTheme)
+
+        function toggleTheme () {
+
+            const currentBodyColor = document.body.style.backgroundColor
+            console.log(currentBodyColor)
+
+            if(currentBodyColor === 'white' || currentBodyColor === '') {
+                document.body.style.backgroundColor = 'grey'
+                document.body.style.color = 'whitesmoke'
+                toggleButton.innerText = 'Light Theme'
+            } else {
+                document.body.style.backgroundColor = 'white'
+                document.body.style.color = 'black'
+                toggleButton.innerText = 'Dark Theme'
+
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>

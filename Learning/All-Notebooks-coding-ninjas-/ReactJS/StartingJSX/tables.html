@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starting With JSX</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <script type="text/babel">
+            function App() {
+                let employee = [
+                    {
+                        name: "Ashish",
+                        EmpCode: "Ks23007",
+                        EmailID: "Ashish.navale@kotak.com",
+                    },
+                    {
+                        name: "Ashish1",
+                        EmpCode: "Ks230071",
+                        EmailID: "Ashish.navale1@kotak.com",
+                    },
+                    {
+                        name: "Ashish2",
+                        EmpCode: "Ks230072",
+                        EmailID: "Ashish.navale2@kotak.com",
+                    }]
+            
+            return (
+                <>
+                    <h1>Employee Details</h1>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>EmpCode</th>
+                            <th>EmailID</th>
+                        </tr>
+                        {employee.map((employee) => (
+                            <tr>
+                                <td>{employee.name}</td>
+                                <td>{employee.EmpCode}</td>
+                                <td>{employee.EmailID}</td>
+                            </tr>
+                        ))}
+
+                    </table>
+                </>
+            )}  
+
+            // function App(){
+            //     let LoggedIN = true;
+            //     return(
+            //         <>
+                    
+            //         </>
+            //     )
+            // }
+
+
+            const rootElement = ReactDOM.createRoot(document.getElementById("root")); rootElement.render(<App />);
+
+        </script>
+
+
+    </div>
+
+</body>
+
+</html>

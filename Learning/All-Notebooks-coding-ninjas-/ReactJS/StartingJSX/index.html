@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starting With JSX</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <script type="text/babel">
+            const App = () => {
+
+                const name = "Demo";
+                const age = 18;
+                const hobby = "JavaScript";
+                const isMarried = false;
+                const square = (a) => a**2
+                const headers = <h2>1</h2>
+                const headers2 = <h2>2</h2>
+                const far = <p> Temperature in fahrenheit: 12</p>
+
+                function App2() {
+                    return <h1>Output: {square}</h1>
+                }
+
+                return (
+                    <>
+                        <h1>{name}'s basic info:</h1>
+                        {headers}
+                        {headers2}
+                        <p>My age is {age}.</p>
+                        <p>I like {hobby} a lot!</p>
+                        <p> Am i married?: {isMarried.toString()} </p>
+                        <p> Output: {(App2)} </p>
+
+
+                    </>
+                );
+            };
+
+            const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+            rootElement.render(<App />);
+        </script>
+
+
+    </div>
+
+</body>
+
+</html>

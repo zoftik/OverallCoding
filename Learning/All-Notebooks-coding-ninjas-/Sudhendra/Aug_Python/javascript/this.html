@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        "use strict";
+
+        // console.log(this) // window
+
+        // var ab = true
+        // local or function scope
+        function func1 (a, b) {
+            console.log("this in function", this.name, a, b)
+        }
+
+        let func2 = function named () { console.log("named", this)  }
+        let func3 = function () { console.log("anoynomous", this)  }
+        let arrfunc = () => { console.log("arrow func", this)  }
+
+        // func1()
+        func2()
+        func3()
+        arrfunc()
+
+        let student = {
+            name: 'Ninjas',
+            roll: 34,
+            getName: function () { 
+                console.log("name", this.name)
+
+                // // let self = this
+                // const inner = () => {
+                //     console.log("inner", this.name)
+                // }
+                // inner()
+            },
+            getRoll() { console.log("roll", this.roll ) }
+        }
+
+        // block scope 
+
+        {
+            // console.log("block", this)
+        }
+
+
+        // binding
+
+        func1.apply(student, [1, 4])
+        func1.call(student, 1, 4)
+        const bindedfunc1 = func1.bind(student)
+        bindedfunc1(1, 4)
+        bindedfunc1(2, 3)
+
+
+
+
+    </script>
+    
+</body>
+</html>

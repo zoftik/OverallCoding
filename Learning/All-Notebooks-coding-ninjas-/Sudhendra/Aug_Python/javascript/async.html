@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul id="main-list">
+
+    </ul>
+
+    <button onclick="getTaskhandler()"> Get Task </button>
+
+    <script>
+
+
+        function getTaskhandler() {
+            const xhr = new XMLHttpRequest()
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos')
+            // success
+            xhr.onload = () => {
+                const todoItems = JSON.parse(xhr.response)
+
+                const mainList = document.getElementById('main-list')
+                for (let i = 0; i < 10; i++) {
+
+                    const item = todoItems[i];
+                    const liel = document.createElement('li')
+                    // const titleSpan = document.createElement('span')
+                    // const idSpan = document.createElement('span')
+                    // titleSpan.innerText = item.title
+                    // idSpan.innerText = item.id
+
+                    liel.innerHTML = `<span> ${item.title} </span> <span> ${item.id} </span>`
+                    mainList.appendChild(liel)
+                }
+
+            }
+
+            // failed
+            xhr.onerror = () => { console.log("Error occured!") }
+            xhr.send()
+        }
+
+
+        // const xhr = new XMLHttpRequest()
+        // xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts')
+        // xhr.onload = () => { console.log(xhr.response) }
+        // xhr.send()
+        // console.log("outside",xhr.response)
+
+    </script>
+
+</body>
+
+</html>
